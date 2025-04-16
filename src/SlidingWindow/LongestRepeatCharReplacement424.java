@@ -6,21 +6,21 @@ public class LongestRepeatCharReplacement424 {
     public static int RepeatCharReplace(String s, int k){
         int n = s.length();
         int left = 0, right = 0;
-        int max = 0, res = 0;
+        int maxCount = 0, maxLength = 0;
         int[] hash = new int[26];
         while (right < n)
         {
             hash[s.charAt(right) - 'A']++;
-            max = Math.max(max, hash[s.charAt(right) - 'A']);
-            while (right - left + 1 - max > k)
+            maxCount = Math.max(maxCount, hash[s.charAt(right) - 'A']);
+            while (right - left + 1 - maxCount > k)
             {
                 hash[s.charAt(left) - 'A']--;
                 left++;
             }
-            res = Math.max(res, right - left + 1);
+            maxLength = Math.max(maxLength, right - left + 1);
             right++;
         }
-        return res;
+        return maxLength;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
