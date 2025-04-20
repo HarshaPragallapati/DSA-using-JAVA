@@ -39,7 +39,7 @@ choose (3, 3) -> 4 4 4
 3 is the min no.of moves required to make all three numbers equal.
  */
 
-package POTD;
+package WeeklyContest;
 
 import java.util.Scanner;
 
