@@ -2,7 +2,7 @@ package SlidingWindow;
 
 import java.util.Scanner;
 
-public class ScoreLessThanK {
+public class ScoreLessThanK2302 {
     public static void main(String[] args) {
         /*
          the score of an array is defined as the product of its sum and its length.
