@@ -1,21 +1,19 @@
-package Recursion;
+package Backtracking;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.*;
 
-public class CombinationSum40 {
+public class CombinationSum216 {
     public static void main(String[] args) {
-        int[] candidates = {10,1,2,7,6,1,5};
-        int target = 8;
+        int[] candidates = {1,2,3,4,5,6,7,8,9};
+        int k = 3, n = 9;
         List<List<Integer>> ans = new ArrayList<>();
-        Arrays.sort(candidates);
-        findCombinations(0, candidates, target, ans, new ArrayList<>());
+        findCombinations(0, candidates, k, n, ans, new ArrayList<>());
         System.out.println(ans);
     }
 
-    private static void findCombinations(int ind, int[] arr, int target, List<List<Integer>> ans, List<Integer> list) {
-        if (target == 0){
+    private static void findCombinations(int ind, int[] arr,int k, int n, List<List<Integer>> ans, List<Integer> list) {
+        if (n == 0 && k == 0){
             ans.add(new ArrayList<>(list));
             return;
         }
@@ -23,11 +21,11 @@ public class CombinationSum40 {
             if (i > ind && arr[i] == arr[i - 1]){
                 continue;
             }
-            if (arr[i] > target){
+            if (arr[i] > n){
                 break;
             }
             list.add(arr[i]);
-            findCombinations(i + 1, arr, target - arr[i], ans, list);
+            findCombinations(i + 1, arr, k - 1, n - arr[i], ans, list);
             list.removeLast();
         }
     }
