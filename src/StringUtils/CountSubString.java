@@ -1,4 +1,4 @@
-package String;
+package StringUtils;
 // count no of substrings starting with same start and end character
 
 import java.util.Scanner;

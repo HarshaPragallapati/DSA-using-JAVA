@@ -1,4 +1,4 @@
-package String;
+package StringUtils;
 
 public class ReverseWordsInString151 {
     public static void main(String[] args) {
