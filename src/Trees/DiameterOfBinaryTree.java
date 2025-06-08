@@ -3,16 +3,16 @@ package Trees;
 public class DiameterOfBinaryTree {
     private static int diameter = 0;
     public static void main(String[] args) {
-        Node root = new Node(1);
-        root.left = new Node(2);
-        root.right = new Node(3);
-        root.left.left = new Node(4);
-        root.left.right = new Node(5);
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
         findDiameter(root);
         System.out.println(diameter);
     }
 
-    private static int findDiameter(Node root) {
+    private static int findDiameter(TreeNode root) {
         if (root == null) return 0;
         int leftH = findDiameter(root.left);
         int rightH = findDiameter(root.right);

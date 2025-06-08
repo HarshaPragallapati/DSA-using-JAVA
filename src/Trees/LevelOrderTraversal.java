@@ -1,14 +1,13 @@
 package Trees;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
 public class LevelOrderTraversal {
-    private static List<List<Integer>> LOT(Node root){
+    static List<List<Integer>> LOT(TreeNode root){
         List<List<Integer>> res = new LinkedList<List<Integer>>();
-        Queue<Node> queue = new LinkedList<Node>();
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
         if (root == null){
             return res;
         }
@@ -23,18 +22,18 @@ public class LevelOrderTraversal {
                 if (queue.peek().right != null){
                     queue.offer(queue.peek().right);
                 }
-                inner.add(queue.poll().data);
+                inner.add(queue.poll().val);
             }
             res.add(inner);
         }
         return res;
     }
     public static void main(String[] args) {
-        Node root = new Node(3);
-        root.left = new Node(9);
-        root.right = new Node(20);
-        root.right.left = new Node(15);
-        root.right .right = new Node(7);
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right .right = new TreeNode(7);
         List<List<Integer>> result;
         result = LOT(root);
         System.out.println(result);

@@ -2,22 +2,22 @@ package Trees;
 
 public class BalancedBinaryTree {
     public static void main(String[] args) {
-        Node root = new Node(1);
-        root.left = new Node(2);
-        root.right = new Node(3);
-        root.left.left = new Node(4);
-        root.left.right = new Node(5);
-        root.left.right.right = new Node(6);
-        root.left.right.right.right = new Node(7);
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.left.right.right = new TreeNode(6);
+        root.left.right.right.right = new TreeNode(7);
 
         System.out.println(isBalanced(root) ? true : false);
     }
 
-    private static boolean isBalanced(Node root) {
+    private static boolean isBalanced(TreeNode root) {
         return calculateHeight(root) != -1;
     }
 
-    private static int calculateHeight(Node root) {
+    private static int calculateHeight(TreeNode root) {
         if (root == null) return 0;
         int leftH = calculateHeight(root.left);
         if (leftH == -1){
