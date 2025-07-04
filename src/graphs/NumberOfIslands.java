@@ -20,20 +20,20 @@ public class NumberOfIslands {
             for (int col = 0; col < m; col++) {
                 if (grid[row][col] == '1'){
                     count++;
-                    bfs(grid, row, col);
+                    dfs(grid, row, col);
                 }
             }
         }
         return count;
     }
 
-    private static void bfs(char[][] grid, int row, int col) {
+    private static void dfs(char[][] grid, int row, int col) {
         if (row < 0 || col < 0 || row >= grid.length || col >= grid[0].length || grid[row][col] != '1') return;
         grid[row][col] = '0';
-        bfs(grid, row + 1, col);
-        bfs(grid, row - 1, col);
-        bfs(grid, row, col + 1);
-        bfs(grid, row, col - 1);
+        dfs(grid, row + 1, col);
+        dfs(grid, row - 1, col);
+        dfs(grid, row, col + 1);
+        dfs(grid, row, col - 1);
     }
 }
 
