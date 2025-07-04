@@ -15,24 +15,14 @@ public class BuyAndSellStock3 {
     }
 
     private static int maxProfit(int[] prices) {
-        int prev = 0, curr = prices[0];
-        int max = 0;
-        int n = prices.length;
-        for (int i = 1; i < n; i++) {
-            if (prices[i] - curr > 0){
-                if (prices[i] - curr > max){
-                    if (max > prev){
-                        prev = max;
-                    }
-                    max = prices[i] - curr;
-                } else if (prices[i] - curr > prev) {
-                    prev = prices[i] - curr;
-                }
-            }
-            else {
-                curr = prices[i];
-            }
+        int buy1 = Integer.MIN_VALUE, sell1 = 0;
+        int buy2 = Integer.MIN_VALUE, sell2 = 0;
+        for (int price : prices) {
+            buy1 = Math.max(buy1, -price);
+            sell1 = Math.max(sell1, buy1 + price);
+            buy2 = Math.max(buy2, sell1 - price);
+            sell2 = Math.max(sell2, buy2 + price);
         }
-        return prev + max;
+        return sell2;
     }
 }
