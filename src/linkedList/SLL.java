@@ -4,14 +4,18 @@ class ListNode {
     int val;
     ListNode next;
 
-    public ListNode(int data1)
+    public ListNode(int data)
     {
-        this.val = data1;
+        this.val = data;
     }
 
-    public ListNode(int data1, ListNode next) {
-        this.val = data1;
+    public ListNode(int data, ListNode next) {
+        this.val = data;
         this.next = next;
+    }
+
+    public ListNode() {
+
     }
 }
 class LL{
@@ -20,8 +24,7 @@ class LL{
         ListNode mover = head;
         for (int i = 1;i< arr.length;i++)
         {
-            ListNode temp = new ListNode(arr[i]);
-            mover.next = temp;
+            mover.next = new ListNode(arr[i]);
             mover = mover.next;
         }
         return head;

@@ -41,7 +41,7 @@ public class ShortestPathInDAG {
                 int u = it[0];
                 int wt = it[1];
                 if (dist[node] + wt < dist[u]){
-                    dist[u] = dist[node] + wt;
+                    dist[u] = dist[node] + wt;  
                 }
             }
         }
